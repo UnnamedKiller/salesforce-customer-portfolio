@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CustomerPortfolio_User_Required</fullName>
+    <active>true</active>
+    <description>Guarantees the User field is required.</description>
+    <errorConditionFormula>ISBLANK( User__c )</errorConditionFormula>
+    <errorMessage>A user must always be assigned.</errorMessage>
+</ValidationRule>

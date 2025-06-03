@@ -1,3 +1,13 @@
+# Customer Portfolio Solution
+
+This Salesforce project manages internal customer access based on external assignments and role hierarchy propagation.
+It ensures that managers inherit access dynamically and that inherited access is removed when no longer valid.
+
+Main Features:
+- Custom Object 'Customer_Portfolio__c'
+- Apex Batch job for propagation and cleanup
+- Role hiearchy traversal and logic
+
 # Salesforce DX Project: Next Steps
 
 Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
