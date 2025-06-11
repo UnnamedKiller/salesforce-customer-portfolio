@@ -3,7 +3,6 @@
     <fullName>User__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <description>The user who currently has access to the customer.</description>
-    <externalId>false</externalId>
     <inlineHelpText>The user who currently has access to the customer.</inlineHelpText>
     <label>User</label>
     <referenceTo>User</referenceTo>

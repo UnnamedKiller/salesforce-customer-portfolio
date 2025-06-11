@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Source__c</fullName>
     <description>Indicates how the user was granted access to the customer.</description>
-    <externalId>false</externalId>
     <inlineHelpText>&quot;External&quot; is only for access given by the third-party system. 
 &quot;Internal&quot; is only for access inherited via role hierarchy.</inlineHelpText>
     <label>Source</label>

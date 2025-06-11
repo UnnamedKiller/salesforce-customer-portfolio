@@ -3,7 +3,6 @@
     <fullName>Customer__c</fullName>
     <deleteConstraint>Restrict</deleteConstraint>
     <description>The customer to which the user has access.</description>
-    <externalId>false</externalId>
     <label>Customer</label>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Customers Portfolio</relationshipLabel>
