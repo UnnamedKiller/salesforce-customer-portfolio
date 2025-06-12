@@ -4,7 +4,10 @@
 * corresponding records with Source = 'Internal' in the role hierarchy .
 */
 public class CustomerPortfolioDeleteBatch implements Database.Batchable<SObject> {
-    
+/**
+* @description Iniciates the batch. Searches for Customer Portfolio records 
+* with Source = 'External' that were deleted recently.
+*/    
     public Database.QueryLocator start(Database.BatchableContext bc) {
         Datetime startTimeWindow = Datetime.now().addHours(-3);    
         String query = 'SELECT User__c, Customer__c FROM Customer_Portfolio__c ' +
@@ -41,16 +44,11 @@ public class CustomerPortfolioDeleteBatch implements Database.Batchable<SObject>
             Database.delete(internalsToDelete, false);
         }
     }
-    public void finish(Database.BatchableContext bc) {
-        System.debug('CustomerPortfolioDeleteBatch Finalized with success. Job ID: ' + bc.getJobId());
-        AsyncApexJob job = [
-            SELECT Id FROM AsyncApexJob 
-            WHERE JobType = 'BatchApex' AND Status IN ('Queued', 'Processing')
-            LIMIT 1
-        ];
-        if (job == null) {
-            Database.executeBatch(new CustomerPortfolioUpsertBatch());
-            System.debug('Inicializing CustomerPortfolioUpsertBatch');
-        }
+public void finish(Database.BatchableContext bc) {
+    System.debug('CustomerPortfolioDeleteBatch succeeded. Job ID: ' + bc.getJobId());
+    if (!Test.isRunningTest()) {
+         Database.executeBatch(new CustomerPortfolioUpsertBatch());
+         System.debug('Starting the Upsert Batch');
     }
+}
 }

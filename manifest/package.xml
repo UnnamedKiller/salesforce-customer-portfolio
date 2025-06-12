@@ -6,6 +6,7 @@
         <members>CustomerPortfolioUpsertBatch</members>
         <members>RoleHierarchyHelper</members>
         <members>TestDataFactory</members>
+        <members>CustomerPortfolioBatchSchedulerTest</members>
         <members>CustomerPortfolioDeleteBatchTest</members>
         <members>CustomerPortfolioUpsertBatchTest</members>
         <members>RoleHierarchyHelperTest</members>
